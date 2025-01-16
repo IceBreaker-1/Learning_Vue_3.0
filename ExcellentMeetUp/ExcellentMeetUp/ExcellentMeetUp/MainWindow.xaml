@@ -1,0 +1,47 @@
+﻿<Window x:Class="ExcellentMeetUp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcellentMeetUp"
+        xmlns:custom="clr-namespace:ExcellentMeetUp.UserControls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <ScrollViewer>
+        <Grid Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+
+                    <custom:TextBoxWithHeader x:Name="NameParty" TextHeader="Название" Width="500" IsTextBox="True"></custom:TextBoxWithHeader>
+                    <custom:TextBoxWithHeader x:Name="DateParty" TextHeader="Дата" Width="500"></custom:TextBoxWithHeader>
+                    <custom:TextBoxWithHeader x:Name="PlaceParty" TextHeader="Место" Width="500" IsTextBox="True"></custom:TextBoxWithHeader>
+                    <custom:TextBoxWithHeader x:Name="DescriptionParty" TextHeader="Описание" Width="500" IsTextBox="True" ></custom:TextBoxWithHeader>
+                    <custom:ImageWithDatePicker x:Name="ImageParty" TextHeader="Изображение"></custom:ImageWithDatePicker>
+
+                    <TextBlock Margin="0,15,0,0" Text="Программа" FontSize="20" FontWeight="Bold" Foreground="DarkSlateGray"></TextBlock>
+                    <ScrollViewer MaxHeight="250" Margin="0,15,0,0">
+                        <StackPanel Name="ListOfPrograms">
+
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <TextBlock>
+                    <Hyperlink Click="AddProgram">Добавить этап программы</Hyperlink>
+                    </TextBlock>
+
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Right">
+                <Border BorderBrush="Blue" Background="Transparent" MouseDown="Cancel" BorderThickness="2">
+                    <TextBlock Text="Отмена" FontWeight="Bold" Foreground="Blue" Margin="20,10,20,10" TextAlignment="Center"></TextBlock>
+                </Border>
+
+                <Border BorderBrush="Blue" Background="Blue" MouseDown="Save" BorderThickness="2" Margin="0,10,0,0">
+                    <TextBlock Text="Сохранить" FontWeight="Bold" Foreground="White" Margin="20,10,20,10" TextAlignment="Center"></TextBlock>
+                </Border>
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</Window>
